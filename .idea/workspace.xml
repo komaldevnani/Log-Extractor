@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36753236-a324-485d-9785-aa9309597c3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/helper_methods.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/file_search_spec.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_search.rb" beforeDir="false" afterPath="$PROJECT_DIR$/file_search.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log_extractor.rb" beforeDir="false" afterPath="$PROJECT_DIR$/log_extractor.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log_parser.rb" beforeDir="false" afterPath="$PROJECT_DIR$/log_parser.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logfile.rb" beforeDir="false" afterPath="$PROJECT_DIR$/logfile.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/file_search_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/file_search_spec.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/option_parser_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/option_parser_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/helper_methods.rb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +62,8 @@
       <workItem from="1595396045409" duration="3121000" />
       <workItem from="1595419697645" duration="4703000" />
       <workItem from="1595428690952" duration="11028000" />
-      <workItem from="1595488239510" duration="14101000" />
+      <workItem from="1595488239510" duration="14360000" />
+      <workItem from="1595505633719" duration="199000" />
     </task>
     <servers />
   </component>

@@ -29,8 +29,12 @@ describe OptParser do
   end
 end
 describe LogParser do
+  def make_parent_dir
+    Dir.mkdir("../logs") unless Dir.exist?("../logs")
+  end
 
   def generate_file(file_index, line_list)
+    make_parent_dir
     parent_dir = "../logs"
     helper = HelperMethods.new
     file_name = helper.generate_file_name(file_index,parent_dir)
@@ -130,11 +134,5 @@ describe LogParser do
     end
   end
 
-  # describe FileSearch do
-  #   describe '#binary_search_file' do
-  #     it "returns file index containing the starting timestamp" do
-  #
-  #     end
-  #   end
-  # end
+
 end
