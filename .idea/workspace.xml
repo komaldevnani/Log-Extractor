@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36753236-a324-485d-9785-aa9309597c3c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/file_search_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/file_search_spec.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/option_parser_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/option_parser_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +61,7 @@
       <workItem from="1595419697645" duration="4703000" />
       <workItem from="1595428690952" duration="11028000" />
       <workItem from="1595488239510" duration="14360000" />
-      <workItem from="1595505633719" duration="199000" />
+      <workItem from="1595505633719" duration="519000" />
     </task>
     <servers />
   </component>
