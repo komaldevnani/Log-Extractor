@@ -34,12 +34,9 @@ class OptParser
       puts opt_parser.help
       exit 1
     end
-    # unless File.directory?(options[:directory])
-    #   abort("file directory not found")
-    # end
+    unless File.directory?(options[:directory])
+      abort("file directory not found")
+    end
     options
   end
 end
-
-  # p Time.parse("2020-07-16T02:30:00.1234Z").iso8601
-  # p options[:from].utc.iso8601

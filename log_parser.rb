@@ -14,15 +14,16 @@ class LogParser
 
   def logs_in_range(start_time, end_time, parent_dir)
     f_search = FileSearch.new
-    helper = HelperMethods.new
     from_fileno = f_search.binary_search_file(start_time, parent_dir)
     cur_file = from_fileno
+
     got = false
-    last_file = helper.file_index(helper.recent_logfile(parent_dir))
+    last_file = Helper.file_index(Helper.recent_logfile(parent_dir))
 
     while cur_file <= last_file
-      file_path = helper.generate_file_name(cur_file, parent_dir)
+      file_path = Helper.generate_file_name(cur_file, parent_dir)
       file = File.open(file_path)
+
       file.readlines.each do |line|
         time = get_timestamp(line)
 
@@ -43,11 +44,11 @@ class LogParser
     return @output_lines
   end
 
+  private
 
   def get_timestamp(log)
-    helper = HelperMethods.new
     time = log[0...log.index(',')]
-    helper.to_time(time)
+    Helper.to_time(time)
   end
 
   def out(line)
@@ -57,6 +58,4 @@ class LogParser
       @output_lines << line
     end
   end
-
-
 end

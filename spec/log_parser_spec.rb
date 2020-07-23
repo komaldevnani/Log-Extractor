@@ -1,33 +1,6 @@
-require_relative '../opt_parser'
 require_relative '../log_parser'
-require 'optparse'
 require_relative '../helper_methods'
 
-describe OptParser do
-  describe ".parse" do
-
-    context "given zero arguments" do
-      it "prints help message" do
-        expect(OptParser.parse([])).to eq(puts parser)
-      end
-    end
-
-    context "given -h or --help argument" do
-      it "prints parser object" do
-        expect(OptParser.parse(["-h"])).to eq(puts parser)
-      end
-    end
-
-    it "returns hash containing time range and directory to search in" do
-      from_t = "2:30"
-      to_t = "6:30"
-      dir = "../logs"
-      options = OptParser.parse(["-f", from_t, "-t", to_t, "-i", dir])
-      expect(options).to match_array([[:from, Time.parse(from_t)],[:to, Time.parse(to_t)], [:directory, dir]])
-    end
-
-  end
-end
 describe LogParser do
   def make_parent_dir
     Dir.mkdir("../logs") unless Dir.exist?("../logs")
@@ -36,8 +9,7 @@ describe LogParser do
   def generate_file(file_index, line_list)
     make_parent_dir
     parent_dir = "../logs"
-    helper = HelperMethods.new
-    file_name = helper.generate_file_name(file_index,parent_dir)
+    file_name = Helper.generate_file_name(file_index,parent_dir)
     file = File.open(file_name, "w")
     line_list.each do |line|
       full_line = line.join(",") + "\n"
@@ -59,26 +31,6 @@ describe LogParser do
   describe ".parse" do
 
     def generate_files
-      # generate_file(
-      #   '0',
-      #   [
-      #     ['2018-10-10 10:10:05', '10@10@05'],
-      #     ['2018-10-10 10:10:06', '2'],
-      #     ['2018-10-10 10:10:08', '2'],
-      #     ['2018-10-10 10:10:10', '2'],
-      #     ['2018-10-10 10:10:20', '2']
-      #   ]
-      # )
-      # generate_file(
-      #   '1',
-      #   [
-      #     ['2018-10-10 10:10:20', '1'],
-      #     ['2018-10-10 10:10:30', '2'],
-      #     ['2018-10-10 10:10:40', '2'],
-      #     ['2018-10-10 10:10:50', '2'],
-      #     ['2018-10-10 10:11:05', '2']
-      #   ]
-      # )
       generate_file_with_payload('0', ['2018-10-10T10:10:05.1234Z', '2018-10-10T10:20:06.1234Z', '2018-10-10T10:30:08.1234Z'])
       generate_file_with_payload('1', ['2018-10-10T20:10:05.1234Z', '2018-10-10T20:20:06.1234Z', '2018-10-10T20:30:08.1234Z'])
       generate_file_with_payload('2', ['2018-11-10T10:10:05.1234Z', '2018-11-10T10:20:06.1234Z', '2018-11-10T10:30:08.1234Z'])
@@ -106,19 +58,18 @@ describe LogParser do
 
 
 
-   it 'Searches for logs across files' do
+    it 'Searches for logs across files' do
       start_date = Time.parse("2018-11-10 15:20:05").utc
       end_date = Time.parse("2018-11-10 16:00:08").utc
       directory = "../logs"
       log_parser = LogParser.new("return")
       lines = log_parser.logs_in_range(start_date, end_date, directory)
 
-
-
       payloads = lines.map { |x| x.split(",")[1] }
       expect(payloads).to match_array(["2018-11-10T10:10:05.1234Z\n", "2018-11-10T10:20:06.1234Z\n"])
 
-   end
+    end
+
     it 'Prints logs from more than one file' do
       start_date = Time.parse("2018-11-10 15:20:05").utc
       end_date = Time.parse("2018-11-12 10:12:08").utc
@@ -126,13 +77,9 @@ describe LogParser do
       log_parser = LogParser.new("return")
       lines = log_parser.logs_in_range(start_date, end_date, directory)
 
-
-
       payloads = lines.map { |x| x.split(",")[1] }
       expect(payloads).to match_array(["2018-11-10T10:10:05.1234Z\n", "2018-11-10T10:20:06.1234Z\n","2018-11-10T10:30:08.1234Z\n",
                                        "2018-11-11T20:12:05.1234Z\n", "2018-11-11T20:14:06.1234Z\n","2018-11-11T20:18:08.1234Z\n"])
     end
   end
-
-
 end
