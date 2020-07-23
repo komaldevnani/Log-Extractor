@@ -13,6 +13,7 @@ class Logfile
     pos = -1
     loop do
       pos -= 1
+      # p pos
       fp.seek(pos, IO::SEEK_END)
       char = fp.read(1)
 
