@@ -1,28 +1,59 @@
-class LogParser
-  def self.print_logs(start_time, end_time, parent_dir)
-    from_fileno = binary_search_file(start_time, parent_dir)
-    read_file = 0
-    more = true
+require_relative 'file_search'
+require_relative 'utils/helper_methods'
 
-    while more
-      file_path = parent_dir + "/LogFile-" + (from_fileno+read_file)
-      File.each_line(file_path) do |line|
-        time = line[0...line.index(',')]
-        time = Time.iso8601(time)
+class LogParser
+  SUPPORTED_OUTPUT_METHODS = ['console', 'return']
+  def initialize(output_method = 'console')
+    raise ArgumentError unless SUPPORTED_OUTPUT_METHODS.include?(output_method)
+
+    @output_method = output_method
+
+    @output_lines = []
+  end
+
+  def logs_in_range(start_time, end_time, parent_dir)
+    f_search = FileSearch.new
+    from_fileno = f_search.binary_search_file(start_time, parent_dir)
+    cur_file = from_fileno
+    got = false
+    last_file = f_search.last_fileno
+    while cur_file <= last_file
+      file_path = HelperMethods.generate_file_name(cur_file, parent_dir)
+      file = File.open(file_path)
+      file.readlines.each do |line|
+        time = get_timestamp(line)
 
         if time < start_time
           next
         elsif time <= end_time
-          p line
+          got = true
+          out(line)
         else
-          File.close()
-          more = false
+          file.close
           break
         end
       end
 
-      read_file += 1
+      cur_file += 1
     end
+    puts "ERROR! we don't have logs for given time range" unless got
 
+    return @output_lines
   end
+
+
+  def get_timestamp(log)
+    time = log[0...log.index(',')]
+    HelperMethods.to_time(time)
+  end
+
+  def out(line)
+    if @output_method == 'console'
+      p line
+    else
+      @output_lines << line
+    end
+  end
+
+
 end

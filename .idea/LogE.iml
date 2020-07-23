@@ -40,6 +40,30 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="file-tail (vbundled(1.2.0)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/file-tail-1.2.0/bin" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/file-tail-1.2.0/lib" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/file-tail-1.2.0/tests" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/file-tail-1.2.0/examples" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/file-tail-1.2.0/bin" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/file-tail-1.2.0/lib" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/file-tail-1.2.0/tests" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/file-tail-1.2.0/examples" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/file-tail-1.2.0/bin" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/file-tail-1.2.0/tests" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/file-tail-1.2.0/examples" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="rspec (vbundled(3.9.0)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -107,6 +131,27 @@
         <SOURCES>
           <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/rspec-support-3.9.3/lib" />
         </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="tins (vbundled(1.25.0)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/tins-1.25.0/lib" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/tins-1.25.0/tests" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/tins-1.25.0/examples" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/tins-1.25.0/lib" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/tins-1.25.0/tests" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/tins-1.25.0/examples" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/tins-1.25.0/tests" />
+          <root url="file://$MODULE_DIR$/.bundle/ruby/2.6.0/gems/tins-1.25.0/examples" />
+        </excluded>
       </library>
     </orderEntry>
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.17.2, ruby-2.6.3-p62) [gem]" level="application" />

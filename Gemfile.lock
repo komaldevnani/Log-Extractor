@@ -2,6 +2,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.4.4)
+    file-tail (1.2.0)
+      tins (~> 1.0)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
@@ -15,11 +17,15 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
+    sync (0.5.0)
+    tins (1.25.0)
+      sync
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  file-tail
   rspec
 
 BUNDLED WITH

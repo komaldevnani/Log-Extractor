@@ -1,6 +1,5 @@
 require 'optparse'
 require 'optparse/time'
-require_relative 'find_file'
 
 class OptParser
   def self.parse(args)
@@ -27,6 +26,7 @@ class OptParser
         exit
       end
     end
+
     begin
       opt_parser.parse!(args)
     rescue OptionParser::InvalidArgument => e
@@ -34,9 +34,9 @@ class OptParser
       puts opt_parser.help
       exit 1
     end
-    if File.directory?(options[:directory])
-      abort("file directory not found")
-    end
+    # unless File.directory?(options[:directory])
+    #   abort("file directory not found")
+    # end
     options
   end
 end
