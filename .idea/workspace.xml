@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="36753236-a324-485d-9785-aa9309597c3c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_search.rb" beforeDir="false" afterPath="$PROJECT_DIR$/file_search.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helper_methods.rb" beforeDir="false" afterPath="$PROJECT_DIR$/helper_methods.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log_parser.rb" beforeDir="false" afterPath="$PROJECT_DIR$/log_parser.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opt_parser.rb" beforeDir="false" afterPath="$PROJECT_DIR$/opt_parser.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/file_search_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/option_parser_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/parser_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +63,15 @@
       <workItem from="1595428690952" duration="11028000" />
       <workItem from="1595488239510" duration="14360000" />
       <workItem from="1595505633719" duration="653000" />
-      <workItem from="1595514037027" duration="1031000" />
+      <workItem from="1595514037027" duration="1821000" />
+      <workItem from="1596095857132" duration="1264000" />
+      <workItem from="1596110241671" duration="933000" />
+      <workItem from="1596187048378" duration="755000" />
+      <workItem from="1596296668229" duration="1351000" />
+      <workItem from="1596485175576" duration="1198000" />
+      <workItem from="1596536034251" duration="743000" />
+      <workItem from="1596822873029" duration="597000" />
+      <workItem from="1597305079411" duration="2047000" />
     </task>
     <servers />
   </component>

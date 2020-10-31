@@ -22,9 +22,8 @@ class LogParser
 
     while cur_file <= last_file
       file_path = Helper.generate_file_name(cur_file, parent_dir)
-      file = File.open(file_path)
-
-      file.readlines.each do |line|
+      file = File.new(file_path)
+      file.each do |line|
         time = get_timestamp(line)
 
         if time < start_time
@@ -33,7 +32,6 @@ class LogParser
           got = true
           out(line)
         else
-          file.close
           break
         end
       end
